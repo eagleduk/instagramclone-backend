@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "nodemon --exec babel-node server.js"
   },
   "repository": {
     "type": "git",
@@ -15,5 +15,15 @@
   "bugs": {
     "url": "https://github.com/eagleduk/instagramclone-backend/issues"
   },
-  "homepage": "https://github.com/eagleduk/instagramclone-backend#readme"
+  "homepage": "https://github.com/eagleduk/instagramclone-backend#readme",
+  "dependencies": {
+    "apollo-server": "^3.8.1",
+    "graphql": "^16.5.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.18.0",
+    "@babel/node": "^7.17.10",
+    "@babel/preset-env": "^7.18.0",
+    "nodemon": "^2.0.16"
+  }
 }
