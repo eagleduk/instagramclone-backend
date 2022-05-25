@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon --exec babel-node server.js"
+    "dev": "nodemon --exec babel-node server.js",
+    "migrate" : "npx prisma migrate dev",
+    "studio" : "npx prisma studio --browser none"
   },
   "repository": {
     "type": "git",
@@ -17,6 +19,7 @@
   },
   "homepage": "https://github.com/eagleduk/instagramclone-backend#readme",
   "dependencies": {
+    "@prisma/client": "^3.14.0",
     "apollo-server": "^3.8.1",
     "graphql": "^16.5.0"
   },
@@ -24,6 +27,7 @@
     "@babel/core": "^7.18.0",
     "@babel/node": "^7.17.10",
     "@babel/preset-env": "^7.18.0",
-    "nodemon": "^2.0.16"
+    "nodemon": "^2.0.16",
+    "prisma": "^3.14.0"
   }
 }

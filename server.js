@@ -1,4 +1,7 @@
 import { ApolloServer, gql } from "apollo-server";
+import { PrismaClient } from "@prisma/client";
+
+const client = new PrismaClient();
 
 // A schema is a collection of type definitions (hence "typeDefs")
 // that together define the "shape" of queries that are executed against
@@ -6,8 +9,12 @@ import { ApolloServer, gql } from "apollo-server";
 const typeDefs = gql`
   ## 모델링
   type Movie {
-    title: String
-    year: Int
+    id: Int!
+    title: String!
+    year: Int!
+    genre: String
+    createdAt: String!
+    updatedAt: String!
   }
 
   ##### Query, Mutation 키값 고정
@@ -18,24 +25,27 @@ const typeDefs = gql`
   }
   ## 함수 타입
   type Mutation {
-    createMovie(title: String!): Boolean
-    deleteMovie(title: String!): Boolean
+    createMovie(title: String!, year: Int!, genre: String): Movie
+    deleteMovie(id: Int!): Int
+    updateMovie(id: Int!, title: String!): Movie
   }
 `;
 const resolvers = {
   // Query, Mutation 키값 고정
   Query: {
-    movies: () => [],
-    movie: () => ({ title: "TEST", year: 2022 }),
+    movies: () => client.movie.findMany(),
+    movie: (id) => client.movie.findUnique({ where: { id } }),
   },
   Mutation: {
-    createMovie: (_, { title }) => {
-      console.log("create ", title);
-      return true;
+    createMovie: (_, { title, year, genre }) => {
+      return client.movie.create({ data: { title, year, genre } });
     },
-    deleteMovie: (_, { title }) => {
-      console.log("delete ", title);
-      return false;
+    deleteMovie: (_, { id }) => {
+      client.movie.delete({ where: { id } });
+      return id;
+    },
+    updateMovie: (_, { id, title }) => {
+      return client.movie.update({ where: { id }, data: { title } });
     },
   },
 };
