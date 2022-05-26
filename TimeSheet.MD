@@ -1,10 +1,25 @@
+=============================   2022-05-26  ==============================
+
+1. graphql-tools 설치
+
+   - npm i graphql-tools => 더이상 사용되지 않는듯.. 모듈에 따라 나뉘어 짐
+   - npm i @graphql-tools/load-files : 파일을 읽기위한 패키지
+   - npm i @graphql-tools/merge  : typeDefs, resolver Merge 를 위한 패키지
+   - npm i @graphql-tools/schema : Merge 된 typeDefs, resolver 를 schema 로 변경하기 위한 패키지
+
+1. dotenv 설치
+
+   - npm i dotenv
+   - env 파일의 환경변수를 적용하기 위한 패키지
+   - 제일 처음에 import 하면 하위 파일에서 사용이 가능하다.
+
 =============================   2022-05-25  ==============================
 
 1. prisma 설치
 
    - npm install prisma --save-dev
 
-1. prisma schema 생성
+2. prisma schema 생성
 
    - npx prisma init
    - 실행 후 schema.prisma, .env 파일 생성
@@ -12,17 +27,17 @@
    - migrations 폴더 생성 폴더 안에는 Database sql 문이 들어있다.
    - package.json 에 script 로 migration 명령어를 추가하였다.
 
-1. prisma client 설치
+3. prisma client 설치
 
    - npm install @prisma/client
 
-1. prisma 를 이용한 Apollo Query, Mutation 체험
+4. prisma 를 이용한 Apollo Query, Mutation 체험
    
    - Apollo Operation 에서 사용할 Query, Mutation 을 작성한다.
    - Variables 에서 Parameter 값을 입력한다.
    - Response 에서 Variables 를 이용한 Operation 결과를 확인할 수 있다.
 
-2. prisma studio
+5. prisma studio
 
    - DataBase 를 웹 GUI 로 확인 가능
    - package.json 에 script 로 studio 실행 명령어 작성.
