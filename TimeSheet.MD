@@ -1,3 +1,28 @@
+=============================   2022-05-30  ==============================
+
+1. clone coding init
+
+   - 스키마 삭제 
+   - 모델링 (typeDefs, queries, mutations) 삭제
+   - Database 삭제
+  
+1. user modeling
+
+   - npx prisma init
+   - schema.prisma user modeling
+   - user typeDefs, queries, mutation 생성
+   - PrismaClient modeling 적용이 안되어서 node_modules 삭제 후 재 설치...
+
+1. bcrypt 설치
+
+   - npm i bcrypt
+   - password 암호화를 위한 패키지
+
+1. jsonwebtoken 설치
+
+   - npm i jsonwebtoken
+   - client 에 token 을 전달하기 위한 패키지
+
 =============================   2022-05-26  ==============================
 
 1. graphql-tools 설치
@@ -7,7 +32,7 @@
    - npm i @graphql-tools/merge  : typeDefs, resolver Merge 를 위한 패키지
    - npm i @graphql-tools/schema : Merge 된 typeDefs, resolver 를 schema 로 변경하기 위한 패키지
 
-1. dotenv 설치
+2. dotenv 설치
 
    - npm i dotenv
    - env 파일의 환경변수를 적용하기 위한 패키지
