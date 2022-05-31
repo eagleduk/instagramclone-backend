@@ -1,3 +1,15 @@
+=============================   2022-05-31  ==============================
+
+1. user update
+
+   - username 기준으로 수정 구현
+
+2. user login
+
+3. Divide and Conquer
+
+   - 모듈별 create / search / update 등 액션으로 typeDefs, resolvers 구현
+
 =============================   2022-05-30  ==============================
 
 1. clone coding init
@@ -6,19 +18,19 @@
    - 모델링 (typeDefs, queries, mutations) 삭제
    - Database 삭제
   
-1. user modeling
+2. user modeling
 
    - npx prisma init
    - schema.prisma user modeling
    - user typeDefs, queries, mutation 생성
    - PrismaClient modeling 적용이 안되어서 node_modules 삭제 후 재 설치...
 
-1. bcrypt 설치
+3. bcrypt 설치
 
    - npm i bcrypt
    - password 암호화를 위한 패키지
 
-1. jsonwebtoken 설치
+4. jsonwebtoken 설치
 
    - npm i jsonwebtoken
    - client 에 token 을 전달하기 위한 패키지
