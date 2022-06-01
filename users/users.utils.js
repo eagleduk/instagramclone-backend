@@ -15,7 +15,7 @@ export async function logginUser(token) {
 
 export function protectedResolver(resolver) {
   return function (root, data, context, info) {
-    if (context.logginUser) return resolver(root, data, context, info);
+    if (context.loggedInUser) return resolver(root, data, context, info);
     else
       return {
         result: false,

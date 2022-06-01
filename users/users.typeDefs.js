@@ -1,4 +1,4 @@
-const { gql } = require("apollo-server");
+import { gql } from "apollo-server";
 
 export default gql`
   type User {
@@ -9,5 +9,7 @@ export default gql`
     email: String
     createdAt: String
     updatedAt: String
+    avator: String
+    bio: String
   }
 `;

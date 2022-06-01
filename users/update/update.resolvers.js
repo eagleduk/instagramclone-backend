@@ -1,16 +1,17 @@
 import client from "../../client";
 import bcrypt from "bcrypt";
-import jwt from "jsonwebtoken";
 import { protectedResolver } from "../users.utils";
+import GraphQLUpload from "graphql-upload/GraphQLUpload.js";
 
 const updateUser = async (
   _,
-  { firstname, lastname, username, password, email },
-  { logginUser }
+  { firstname, lastname, username, password, email, avator, bio },
+  { loggedInUser }
 ) => {
+  console.log(avator);
   try {
     await client.user.update({
-      where: { id: logginUser.id },
+      where: { id: loggedInUser.id },
       data: {
         firstname,
         lastname,
@@ -31,6 +32,8 @@ const updateUser = async (
 };
 
 export default {
+  Upload: GraphQLUpload,
+
   Mutation: {
     updateUser: protectedResolver(updateUser),
   },

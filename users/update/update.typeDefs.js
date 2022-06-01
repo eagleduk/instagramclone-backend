@@ -1,6 +1,8 @@
-const { gql } = require("apollo-server");
+import { gql } from "apollo-server";
 
 export default gql`
+  scalar Upload
+
   type updateResult {
     result: Boolean!
     message: String!
@@ -13,6 +15,8 @@ export default gql`
       username: String
       password: String
       email: String
+      avator: Upload
+      bio: String
     ): updateResult
   }
 `;

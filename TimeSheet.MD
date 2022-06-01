@@ -1,22 +1,44 @@
+=============================   2022-06-01  ==============================
+
+1. file upload
+
+   - apollo 의 upload 타입을 사용하기 위해서 graphql-tools 에서의 merge 제거
+   - file type 의 schema 를 사용하기 위해서는 apollo-server-express 로 변경 필요
+
+1. express 서버로 변경
+
+   - npm i express apollo-server-express
+   - express 의 static router 를 사용하기 위해 설치 필요
+   - express 에서 file-upload 를 사용하기 위해 npm i graphql-upload 설치
+   - https://www.apollographql.com/docs/apollo-server/data/file-uploads/ 참고하여 Upload Schema 사용 가능하게 만든다.
+   - 해당 문서도 시간이 좀 된거인가 적용하는데 문제가 많이 생김
+
+      1. GraphQLUpload, graphqlUploadExpress 가 graphql-upload 의 각각 js 파일의 default 로 import
+      2. schema 의 merge 기능 사용 불가
+      3. server 시작시 express 로 변경 후 graphqlUploadExpress() use
+      4. Upload: GraphQLUpload, 타입의 resolver 추가
+      5. gql 에서 scalar Upload 추가
+      6. 서버 url 이 변경됨 (/graphql 추가)
+
 =============================   2022-05-31  ==============================
 
 1. user update
 
    - username 기준으로 수정 구현
 
-1. user login
+2. user login
 
-1. Divide and Conquer
+3. Divide and Conquer
 
    - 모듈별 create / search / update 등 액션으로 typeDefs, resolvers 구현
 
-1. login 시 생성된 token 을 header 에 삽입
+4. login 시 생성된 token 을 header 에 삽입
 
-1. update 시 token을 이용하여 수정
+5. update 시 token을 이용하여 수정
 
    - headers 데이터는 ApolloServer 에서 context 에 담아준다.
 
-1. currying => 함수1에 함수2를 보내어 함수2의 결과값을 함수1의 결과값으로 하는 문법.
+6. currying => 함수1에 함수2를 보내어 함수2의 결과값을 함수1의 결과값으로 하는 문법.
    
    - resolver projected 목적으로 사용
    - token 이 필요한 resolver 에서 통합적으로 token 의 유무를 파악하기 위해 사용했다.
