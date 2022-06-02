@@ -11,5 +11,8 @@ export default gql`
     updatedAt: String
     avator: String
     bio: String
+    follower: [User]
+    following: [User]
+    isSelf: Boolean
   }
 `;

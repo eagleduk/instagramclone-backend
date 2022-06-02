@@ -6,7 +6,8 @@ instagram clone with nomadcoder
 - [X] Create Account
 - [X] See Profile
 - [X] Login
-- [ ] Edit Profile
-- [ ] Follow User
-- [ ] Unfollow User
-- [ ] Change Avatar (Image Upload)
+- [X] Edit Profile
+- [ ] Follow User w Pagination
+- [ ] Unfollow User w Pagination
+- [ ] Computed Fields
+- [ ] Search Users w Pagination

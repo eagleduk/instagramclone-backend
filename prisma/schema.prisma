@@ -21,4 +21,6 @@ model User {
   password  String
   avator    String?
   bio       String?
+  follower  User[]   @relation("FollowRelations", references: [id])
+  following User[]   @relation("FollowRelations", references: [id])
 }

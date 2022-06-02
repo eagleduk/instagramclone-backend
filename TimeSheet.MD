@@ -10,6 +10,23 @@
    - express 의 미들웨어를 사용하여 URL 경로를 디렉토리에 연결
 
 1. uploads 폴더 gitignore 설정
+2. follower following 관계
+
+   - follower: 나를 보는 사람
+   - following: 내가 보는 사람
+
+1. User Schema 추가
+
+   - followers, followings
+   - relations 관계로 연결해 준다.
+   - connect, disconnect 를 이용하여 쉽게 추가 / 삭제가 가능하다.
+
+1. Computed fields
+
+   - Database 에 존재하지 않는 schema 를 사용하여 결과값을 만들어 낸다.
+   - 현재 사용자와 보고 있는 사용자가 동일한지, 현재 following 중인지, follower/following 수 등 database 에 저장하지 않는 결과값을 도출할 때 사용
+
+1. User Search
 
 =============================   2022-06-01  ==============================
 
