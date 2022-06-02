@@ -23,6 +23,7 @@ async function startServer() {
   await server.start();
 
   const app = express();
+  app.use("/static", express.static("uploads"));
   app.use(graphqlUploadExpress());
   server.applyMiddleware({ app });
   await new Promise((r) => app.listen({ port: PORT }, r));

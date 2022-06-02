@@ -1,3 +1,16 @@
+=============================   2022-06-02  ==============================
+1. stream save
+
+   - Upload Schema 의 createReadStream 함수를 실행 하여 stream 생성
+   - 파일을 저장할 위치의 fs.createWriteStream 함수를 사용하여 stream 생성
+   - readStream 에서 pipe 로 writeStream 을 연결 하여 파일 저장.
+
+1. express 정적 파일 제공
+
+   - express 의 미들웨어를 사용하여 URL 경로를 디렉토리에 연결
+
+1. uploads 폴더 gitignore 설정
+
 =============================   2022-06-01  ==============================
 
 1. file upload
@@ -5,7 +18,7 @@
    - apollo 의 upload 타입을 사용하기 위해서 graphql-tools 에서의 merge 제거
    - file type 의 schema 를 사용하기 위해서는 apollo-server-express 로 변경 필요
 
-1. express 서버로 변경
+2. express 서버로 변경
 
    - npm i express apollo-server-express
    - express 의 static router 를 사용하기 위해 설치 필요
