@@ -5,6 +5,7 @@ export default gql`
     result: Boolean!
     message: String
   }
+
   type Mutation {
     # 구독
     followingUser(username: String!): followResult
@@ -17,5 +18,11 @@ export default gql`
 
     # 팔로워 삭제
     unFollowerUser(username: String!): followResult
+  }
+
+  type Query {
+    getFollowerUser(username: String!, lastId: Int): [User]
+
+    getFollowingUser(username: String!, lastId: Int): [User]
   }
 `;

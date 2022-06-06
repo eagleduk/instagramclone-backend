@@ -14,5 +14,9 @@ export default gql`
     follower: [User]
     following: [User]
     isSelf: Boolean
+    followerCount: Int
+    followingCount: Int
+    isFollower: Boolean
+    isFollowing: Boolean
   }
 `;

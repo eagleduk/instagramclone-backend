@@ -1,3 +1,18 @@
+=============================   2022-06-06  ==============================
+
+1. prisma pagination
+
+   1. offset pagination
+
+      - skip 으로 제외 할 갯수를 지정하고 take 로 가져올 갯수를 지정
+      - page 갯수가 필요한 상황에서 사용
+
+   2. cursor pagination
+
+      - cursor 로 가지고 올 데이터를 결정하고 그 이후의 skip 으로 제외 할 갯수를 지정하고 take 로 가져올 갯수를 지정
+      - page 갯수가 필요하지 않은 상황에서 사용
+
+
 =============================   2022-06-02  ==============================
 1. stream save
 
@@ -5,28 +20,28 @@
    - 파일을 저장할 위치의 fs.createWriteStream 함수를 사용하여 stream 생성
    - readStream 에서 pipe 로 writeStream 을 연결 하여 파일 저장.
 
-1. express 정적 파일 제공
+2. express 정적 파일 제공
 
    - express 의 미들웨어를 사용하여 URL 경로를 디렉토리에 연결
 
-1. uploads 폴더 gitignore 설정
-2. follower following 관계
+3. uploads 폴더 gitignore 설정
+4. follower following 관계
 
    - follower: 나를 보는 사람
    - following: 내가 보는 사람
 
-1. User Schema 추가
+5. User Schema 추가
 
    - followers, followings
    - relations 관계로 연결해 준다.
    - connect, disconnect 를 이용하여 쉽게 추가 / 삭제가 가능하다.
 
-1. Computed fields
+6. Computed fields
 
    - Database 에 존재하지 않는 schema 를 사용하여 결과값을 만들어 낸다.
    - 현재 사용자와 보고 있는 사용자가 동일한지, 현재 following 중인지, follower/following 수 등 database 에 저장하지 않는 결과값을 도출할 때 사용
 
-1. User Search
+7. User Search
 
 =============================   2022-06-01  ==============================
 

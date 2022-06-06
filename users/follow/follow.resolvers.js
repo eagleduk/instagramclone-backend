@@ -34,4 +34,31 @@ export default {
 
     unFollowerUser: protectedResolver(async () => {}),
   },
+
+  Query: {
+    getFollowerUser: (_, { username, lastId }) => {
+      return client.user.findMany({
+        where: { following: { some: { username } } },
+        ...(lastId && {
+          cursor: {
+            id: lastId,
+          },
+        }),
+        skip: lastId ? 1 : 0,
+        take: 5,
+      });
+    },
+    getFollowingUser: (_, { username, lastId }) => {
+      return client.user.findMany({
+        where: { follower: { some: { username } } },
+        ...(lastId && {
+          cursor: {
+            id: lastId,
+          },
+        }),
+        skip: lastId ? 1 : 0,
+        take: 5,
+      });
+    },
+  },
 };
