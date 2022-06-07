@@ -7,7 +7,17 @@ instagram clone with nomadcoder
 - [X] See Profile
 - [X] Login
 - [X] Edit Profile
-- [ ] Follow User w Pagination
-- [ ] Unfollow User w Pagination
-- [ ] Computed Fields
-- [ ] Search Users w Pagination
+- [X] Follow User w Pagination
+- [X] Unfollow User w Pagination
+- [X] Computed Fields
+- [X] Search Users w Pagination
+
+# Photos
+- [X] Upload Photo (Parse #)
+- [ ] See Photo
+- [ ] See Hashtag
+- [ ] Search Photos
+- [ ] Edit Photo
+- [ ] Like / Unlike Photo
+- [ ] See Photo Likes
+- [ ] See Feed
