@@ -14,10 +14,10 @@ instagram clone with nomadcoder
 
 # Photos
 - [X] Upload Photo (Parse #)
-- [ ] See Photo
-- [ ] See Hashtag
-- [ ] Search Photos
-- [ ] Edit Photo
+- [X] See Photo
+- [X] See Hashtag
+- [X] Search Photos
+- [X] Edit Photo
 - [ ] Like / Unlike Photo
 - [ ] See Photo Likes
 - [ ] See Feed

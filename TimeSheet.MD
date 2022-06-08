@@ -1,15 +1,21 @@
 =============================   2022-06-06  ==============================
+1. gql fields
+
+   - Computed fields 는 Database 에 없는 schema 를 동적으로 생성하는 거라면,
+   - field 를 함수로 만들어 값을 전달 할 수도 있다!
+
+=============================   2022-06-06  ==============================
 
 1. prisma schema
 
    - 1 대 N 관계의 schema 모델을 생성하면, 자동적으로 schema.prisma 파일에 relation 관계가 입력된다.
    - 실제로 칼럼이 생성되는게 아니고, 개발자가 이해할 수 있도록 schema 파일에 입력된다.
 
-1. prisma client
+2. prisma client
 
    - 또다시 generate 가 제대로 동작하지 않아 node_modules 삭제 및 npx prisma generate 등 다시 여러번 실행...
 
-1. connectOrCreate
+3. connectOrCreate
 
    - 데이터가 존재하면 connect, 데이터가 존재하지 않으면 create 를 자동적으로 수행하는 prisma client 키값
    - 단 데이터를 찾을 때, 칼럼이 unique 인 칼럼을 통해서만 가능하다.
