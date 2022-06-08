@@ -17,15 +17,12 @@ export default {
           },
         });
 
-        console.log(photo);
         if (!photo) {
           return {
             result: false,
             message: "no have photo.",
           };
         }
-        console.log(photo.hashtag);
-        // const oldTags = await client.photo.;
 
         const newTags = getHashtagsFromCaption(caption);
 

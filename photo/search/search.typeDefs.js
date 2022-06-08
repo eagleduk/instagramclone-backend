@@ -7,5 +7,7 @@ export default gql`
     viewHashTags(hashtag: String!): Hashtag
 
     searchPhoto(keyword: String!): [Photo]
+
+    viewFeeds: [Photo]
   }
 `;

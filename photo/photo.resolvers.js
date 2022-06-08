@@ -4,14 +4,13 @@ export default {
   Photo: {
     user: ({ userId }) => client.user.findUnique({ where: { id: userId } }),
     hashtag: async ({ id }) => {
-      console.log(id);
       const result = await client.hashtag.findMany({
         where: { photo: { some: { id } } },
       });
-      console.log(result);
 
       return result;
     },
+    like: ({ id }) => client.like.count({ where: { photoId: id } }),
   },
   Hashtag: {
     totalCount: ({ hashtag }) => {
@@ -24,7 +23,7 @@ export default {
         skip: row * (page - 1),
         take: row,
       });
-      console.log(result);
+
       return result;
     },
   },

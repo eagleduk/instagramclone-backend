@@ -18,6 +18,6 @@ instagram clone with nomadcoder
 - [X] See Hashtag
 - [X] Search Photos
 - [X] Edit Photo
-- [ ] Like / Unlike Photo
-- [ ] See Photo Likes
-- [ ] See Feed
+- [X] Like / Unlike Photo
+- [X] See Photo Likes
+- [X] See Feed

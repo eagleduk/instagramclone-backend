@@ -10,6 +10,7 @@ export default gql`
     userId: Int
     hashtag: [Hashtag]
     user: User!
+    like: Int!
   }
   type Hashtag {
     id: Int!

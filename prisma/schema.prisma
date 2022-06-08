@@ -2,7 +2,8 @@
 // learn more about it in the docs: https://pris.ly/d/prisma-schema
 
 generator client {
-  provider = "prisma-client-js"
+  provider        = "prisma-client-js"
+  previewFeatures = []
 }
 
 datasource db {
@@ -24,6 +25,7 @@ model User {
   follower  User[]   @relation("FollowRelations", references: [id])
   following User[]   @relation("FollowRelations", references: [id])
   photo     Photo[]
+  like      like[]
 }
 
 model Photo {
@@ -35,6 +37,7 @@ model Photo {
   caption   String?
   hashtag   Hashtag[]
   file      String
+  like      like[]
 }
 
 model Hashtag {
@@ -43,4 +46,16 @@ model Hashtag {
   updatedAt DateTime @updatedAt
   photo     Photo[]
   hashtag   String   @unique
+}
+
+model like {
+  id        Int      @id @default(autoincrement())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  User      User     @relation(fields: [userId], references: [id])
+  Photo     Photo    @relation(fields: [photoId], references: [id])
+  userId    Int
+  photoId   Int
+
+  @@unique([userId, photoId])
 }

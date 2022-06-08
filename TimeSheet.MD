@@ -1,8 +1,34 @@
-=============================   2022-06-06  ==============================
-1. gql fields
+=============================   2022-06-08  ==============================
+
+1. gql fields => graphQL 기능
 
    - Computed fields 는 Database 에 없는 schema 를 동적으로 생성하는 거라면,
    - field 를 함수로 만들어 값을 전달 할 수도 있다!
+
+2. like 기능 추가
+
+   - like / unlike toggle
+   - like User List
+   - following 및 내 사진 feed List
+
+3. like model @@unique
+
+   - 여러개의 칼럼을 동시에 unique (아마도 primaryKey) 로 묶는 문구
+   - @@unique 로 묶인 칼럼의 데이터가 모두 같도록 할 수는 없다.
+   - 또한 @@unique 로 묶인 칼럼들로 데이터를 검색할 수도 있다.
+
+1. prisma client 업데이트
+
+   - prisma generate 시 warn version message
+   - PrismaClient 가 @prisma/client => @prisma/client/edge 로 변경
+
+1. typeDefs 에서 Mutation, Query 에서 인자(args)가 필요 없을 때 ()는 생략가능
+2. PrismaClient Query 를 작성할 시
+
+   - select: 보고싶은 데이터만 추출하고 싶을 때
+   - relation 이 있을 때에는 select 안의 select 로 relation 스키마의 칼럼만 추출할 수도 있다.
+   - include: relation 이 있는 데이터도 같이 추출하고 싶을 때
+   - select 와 include 를 동시에 사용할 수는 없다.
 
 =============================   2022-06-06  ==============================
 
