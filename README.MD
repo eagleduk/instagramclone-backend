@@ -21,3 +21,13 @@ instagram clone with nomadcoder
 - [X] Like / Unlike Photo
 - [X] See Photo Likes
 - [X] See Feed
+- [X] See Photo Comments
+- [X] Delete Photo
+
+# Comment
+- [X] Comment on Photo
+- [X] Delete Comment
+- [X] Edit Comment
+
+# Refactor
+- [X] Mutation Responses

@@ -16,10 +16,12 @@ export async function logginUser(token) {
 export function protectedResolver(resolver) {
   return function (root, data, context, info) {
     if (context.loggedInUser) return resolver(root, data, context, info);
-    else
+    else {
+      if (info.operation.operation === "query") return [];
       return {
         result: false,
         message: "loggin first",
       };
+    }
   };
 }

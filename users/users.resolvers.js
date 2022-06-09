@@ -2,7 +2,7 @@ import client from "../client";
 
 export default {
   User: {
-    isSelf: (root, _, { loggedInUser }) => {
+    isOwner: (root, _, { loggedInUser }) => {
       return root.id === loggedInUser.id;
     },
 

@@ -13,7 +13,7 @@ export default gql`
     bio: String
     follower: [User]
     following: [User]
-    isSelf: Boolean
+    isOwner: Boolean
     followerCount: Int
     followingCount: Int
     isFollower: Boolean

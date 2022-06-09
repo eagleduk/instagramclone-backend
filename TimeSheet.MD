@@ -1,3 +1,25 @@
+=============================   2022-06-09  ==============================
+
+1. comment model
+
+   - User, Photo 와 1대1 관계
+
+
+2. photo, comment delete
+
+   - 객체(photo, comment) 가 존재하는지 확인
+   - 객체(photo, comment) 의 소유자가 본인인지 확인
+
+1. gql Result 통합
+
+   - 같은 타입의 result 를 하나로 통합
+
+1. protectedResolver 보완
+
+   - protectResolver 실행시 info 를 이용하여 Query, Mutation 분리
+   - info 에는 apollo-server 에서 실행중인 Query 또는 Mutation 의 정보가 들어있다.
+   - info 에서 query, mutation 구분을 통하여 반환되는 정보를 나눌 수 있다.
+
 =============================   2022-06-08  ==============================
 
 1. gql fields => graphQL 기능
@@ -17,13 +39,13 @@
    - @@unique 로 묶인 칼럼의 데이터가 모두 같도록 할 수는 없다.
    - 또한 @@unique 로 묶인 칼럼들로 데이터를 검색할 수도 있다.
 
-1. prisma client 업데이트
+4. prisma client 업데이트
 
    - prisma generate 시 warn version message
    - PrismaClient 가 @prisma/client => @prisma/client/edge 로 변경
 
-1. typeDefs 에서 Mutation, Query 에서 인자(args)가 필요 없을 때 ()는 생략가능
-2. PrismaClient Query 를 작성할 시
+5. typeDefs 에서 Mutation, Query 에서 인자(args)가 필요 없을 때 ()는 생략가능
+6. PrismaClient Query 를 작성할 시
 
    - select: 보고싶은 데이터만 추출하고 싶을 때
    - relation 이 있을 때에는 select 안의 select 로 relation 스키마의 칼럼만 추출할 수도 있다.

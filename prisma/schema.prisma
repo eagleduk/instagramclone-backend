@@ -12,32 +12,34 @@ datasource db {
 }
 
 model User {
-  id        Int      @id @default(autoincrement())
+  id        Int       @id @default(autoincrement())
   firstname String
   lastname  String?
-  username  String   @unique
-  email     String   @unique
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  username  String    @unique
+  email     String    @unique
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
   password  String
   avator    String?
   bio       String?
-  follower  User[]   @relation("FollowRelations", references: [id])
-  following User[]   @relation("FollowRelations", references: [id])
+  follower  User[]    @relation("FollowRelations", references: [id])
+  following User[]    @relation("FollowRelations", references: [id])
   photo     Photo[]
-  like      like[]
+  like      Like[]
+  comment   Comment[]
 }
 
 model Photo {
   id        Int       @id @default(autoincrement())
   createdAt DateTime  @default(now())
   updatedAt DateTime  @updatedAt
-  User      User      @relation(fields: [userId], references: [id])
+  user      User      @relation(fields: [userId], references: [id])
   userId    Int
   caption   String?
   hashtag   Hashtag[]
   file      String
-  like      like[]
+  like      Like[]
+  comment   Comment[]
 }
 
 model Hashtag {
@@ -48,14 +50,25 @@ model Hashtag {
   hashtag   String   @unique
 }
 
-model like {
+model Like {
   id        Int      @id @default(autoincrement())
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
-  User      User     @relation(fields: [userId], references: [id])
-  Photo     Photo    @relation(fields: [photoId], references: [id])
+  user      User     @relation(fields: [userId], references: [id])
+  photo     Photo    @relation(fields: [photoId], references: [id])
   userId    Int
   photoId   Int
 
   @@unique([userId, photoId])
+}
+
+model Comment {
+  id        Int      @id @default(autoincrement())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  user      User     @relation(fields: [userId], references: [id])
+  photo     Photo    @relation(fields: [photoId], references: [id])
+  userId    Int
+  photoId   Int
+  text      String
 }
