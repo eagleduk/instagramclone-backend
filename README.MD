@@ -2,7 +2,7 @@
 
 instagram clone with nomadcoder
 
-# User
+## User
 - [X] Create Account
 - [X] See Profile
 - [X] Login
@@ -12,7 +12,7 @@ instagram clone with nomadcoder
 - [X] Computed Fields
 - [X] Search Users w Pagination
 
-# Photos
+## Photos
 - [X] Upload Photo (Parse #)
 - [X] See Photo
 - [X] See Hashtag
@@ -24,10 +24,13 @@ instagram clone with nomadcoder
 - [X] See Photo Comments
 - [X] Delete Photo
 
-# Comment
+## Comment
 - [X] Comment on Photo
 - [X] Delete Comment
 - [X] Edit Comment
 
-# Refactor
+## Refactor
 - [X] Mutation Responses
+
+## Extras
+- [ ] S3 Image Upload

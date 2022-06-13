@@ -3,6 +3,7 @@ import client from "../../client";
 import bcrypt from "bcrypt";
 import { protectedResolver } from "../users.utils";
 import GraphQLUpload from "graphql-upload/GraphQLUpload.js";
+import { uploadFile } from "../../common/common.util";
 
 const updateUser = async (
   _,
@@ -11,6 +12,10 @@ const updateUser = async (
 ) => {
   let avatorUrl;
   if (avator) {
+    avatorUrl = await uploadFile(avator, loggedInUser.id, "avator");
+  }
+  /*
+  if (avator) {
     const { filename, createReadStream } = await avator;
     const readStream = createReadStream();
     const newFile = `${loggedInUser.id}${Date.now()}${filename}`;
@@ -18,6 +23,7 @@ const updateUser = async (
     readStream.pipe(outStream);
     avatorUrl = `http://localhost:4849/static/${newFile}`;
   }
+  */
 
   try {
     await client.user.update({

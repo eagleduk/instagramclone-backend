@@ -1,3 +1,19 @@
+=============================   2022-06-13  ==============================
+
+1. aws 업로드
+
+   1. aws sdk 설치
+
+      - npm install aws-sdk
+
+   1. AWS User, Bucket 생성
+
+      - User accessKey, secretKey 중요
+      - User S3 관련 Full 권한
+      - Bucket ACL 권한 활성화
+
+   1. aws 파일 업로드시 폴더 명까지 입력해서 파일을 업로드 할 수 있다.
+
 =============================   2022-06-09  ==============================
 
 1. comment model
@@ -10,11 +26,11 @@
    - 객체(photo, comment) 가 존재하는지 확인
    - 객체(photo, comment) 의 소유자가 본인인지 확인
 
-1. gql Result 통합
+3. gql Result 통합
 
    - 같은 타입의 result 를 하나로 통합
 
-1. protectedResolver 보완
+4. protectedResolver 보완
 
    - protectResolver 실행시 info 를 이용하여 Query, Mutation 분리
    - info 에는 apollo-server 에서 실행중인 Query 또는 Mutation 의 정보가 들어있다.
