@@ -1,3 +1,32 @@
+=============================   2022-06-14  ==============================
+
+1. message 보내기
+
+   - message 보낼 시 chat 가 있으면 해당 chat 와 연결,
+   - chat 가 없을 시 새로운 chat 를 만들고 해당 message 와 연결
+
+1. chat 보기
+
+   - 현재 chat 에는 2명으로 제한
+   - 현재 접속자가 속해있는 모든 chat 보기
+   - chat ID 로 chat 보기
+
+1. 해당 chat 에 있는 user 정보 가져오기
+2. 해당 chat 에 있는 message 가져오기
+
+   - message 를 보낸 사람에 대한 정보도 가져오기
+
+1. 해당 chat 에 있는 사람의 message 확인 유무 
+
+   - 보낸 사람과 연결되어 있는 message 는 제외
+   - 보낸 사람을 제외한 사람에 관하여, message 확인
+
+
+=============================   2022-06-15  ==============================
+
+1. chat, message model
+
+
 =============================   2022-06-13  ==============================
 
 1. aws 업로드
@@ -55,7 +84,7 @@
    - @@unique 로 묶인 칼럼의 데이터가 모두 같도록 할 수는 없다.
    - 또한 @@unique 로 묶인 칼럼들로 데이터를 검색할 수도 있다.
 
-4. prisma client 업데이트
+4. prisma client 업데이트( 다시 버전 다운 )
 
    - prisma generate 시 warn version message
    - PrismaClient 가 @prisma/client => @prisma/client/edge 로 변경

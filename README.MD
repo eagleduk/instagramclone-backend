@@ -33,4 +33,12 @@ instagram clone with nomadcoder
 - [X] Mutation Responses
 
 ## Extras
-- [ ] S3 Image Upload
+- [X] S3 Image Upload
+
+## DMs (Direct Message)
+- [X] See Chats
+- [X] Send Message (Create Chat)
+- [X] See Chat
+- [X] Computed Fields (get chat users, get chat messages, get new message count)
+- [X] See (Read) Message
+- [ ] Realtime Messages
