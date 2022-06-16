@@ -1,4 +1,6 @@
 import client from "../../client";
+import { WSMESSAGE } from "../../constants";
+import pubSub from "../../pubSub";
 import { protectedResolver } from "../../users/users.utils";
 
 export default {
@@ -44,7 +46,7 @@ export default {
               id: chatId,
             },
           });
-          console.log(chatId, chat);
+
           if (!chat) {
             return {
               result: false,
@@ -53,13 +55,23 @@ export default {
           }
         }
 
-        await client.message.create({
+        const newMes = await client.message.create({
           data: {
             message,
-            userId: loggedInUser.id,
-            chatId: chat.id,
+            user: {
+              connect: {
+                id: loggedInUser.id,
+              },
+            },
+            chat: {
+              connect: {
+                id: chat.id,
+              },
+            },
           },
         });
+        console.log(newMes);
+        pubSub.publish(WSMESSAGE, { wsMessage: { ...newMes } });
 
         return {
           result: true,

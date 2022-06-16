@@ -1,34 +1,49 @@
-=============================   2022-06-14  ==============================
+=============================   2022-06-16  ==============================
+
+1. realtime subscription
+
+   - websocket 으로 실시간 connection 연결으로 원하는 resolver 를 감시할 수 있다.
+   - 기존에는 apollo-server 에서 지원을 해주었지만, 현재는 graphql-subscriptions 를 설치해야 사용 가능
+   - npm install graphql-subscriptions 
+   - 동영상과는 버전 차이가 많이 나오기 때문에 https://www.apollographql.com/docs/apollo-server/data/subscriptions/#enabling-subscriptions 참조
+   - 서버 설정을 위해 패키지 추가 설치
+   - npm install graphql-ws ws apollo-server-core
+   - 불과 몇 개월 전만 해도 graphql-ws 를 사용하지 않고 subscriptions-transport-ws 를 사용 하지만 서버는 graphql-ws 를 사용한다.
+   - 그래서 apollo studio 에서 서버 설정 -> implementation 을 graphql-ws 로 변경하지 않으면 subscriptions 실행시 연결이 되지 않는다.
+   - graphql-ws github 에서 찾음.. https://github.com/enisdenjo/graphql-ws#readme
+   - 추후 다른 client 를 사용할때 도움이 될지도..?
+
+=============================   2022-06-15  ==============================
 
 1. message 보내기
 
    - message 보낼 시 chat 가 있으면 해당 chat 와 연결,
    - chat 가 없을 시 새로운 chat 를 만들고 해당 message 와 연결
 
-1. chat 보기
+2. chat 보기
 
    - 현재 chat 에는 2명으로 제한
    - 현재 접속자가 속해있는 모든 chat 보기
    - chat ID 로 chat 보기
 
-1. 해당 chat 에 있는 user 정보 가져오기
-2. 해당 chat 에 있는 message 가져오기
+3. 해당 chat 에 있는 user 정보 가져오기
+4. 해당 chat 에 있는 message 가져오기
 
    - message 를 보낸 사람에 대한 정보도 가져오기
 
-1. 해당 chat 에 있는 사람의 message 확인 유무 
+5. 해당 chat 에 있는 사람의 message 확인 유무 
 
    - 보낸 사람과 연결되어 있는 message 는 제외
    - 보낸 사람을 제외한 사람에 관하여, message 확인
 
-1. git commit 삭제
+6. git commit 삭제
 
    - git log 로 commit 번호 및 내역 확인
    - git reset HEAD~#
      - HEAD 부터 # 번째 까지 reset ( 되돌리기 )
      - commit 내역만 사라지고 수정한 내용은 남는다.
 
-=============================   2022-06-15  ==============================
+=============================   2022-06-14  ==============================
 
 1. chat, message model
 
