@@ -70,7 +70,7 @@ export default {
             },
           },
         });
-        console.log(newMes);
+
         pubSub.publish(WSMESSAGE, { wsMessage: { ...newMes } });
 
         return {

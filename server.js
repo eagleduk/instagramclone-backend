@@ -27,11 +27,11 @@ async function startServer() {
 
   const getDynamicContext = async (ctx, msg, args) => {
     // ctx is the `graphql-ws` Context where connectionParams live
-    if (ctx.connectionParams.authentication) {
-      const currentUser = await findUser(connectionParams.authentication);
-      return { currentUser };
+    if (ctx.connectionParams.token) {
+      const loggedInUser = await logginUser(ctx.connectionParams.token);
+      return { loggedInUser };
     }
-    return { currentUser: null };
+    return { loggedInUser: null };
   };
 
   const schema = makeExecutableSchema({ typeDefs, resolvers });
@@ -39,7 +39,9 @@ async function startServer() {
     {
       schema,
       context: (ctx, msg, args) => {
-        console.log("EFJIEOFE", ctx, msg, args);
+        // console.log("ctx", ctx);
+        // console.log("msg", msg);
+        // console.log("args", args);
         return getDynamicContext(ctx, msg, args);
       },
     },
