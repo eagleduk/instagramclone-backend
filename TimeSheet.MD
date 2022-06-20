@@ -1,3 +1,16 @@
+=============================   2022-06-17  ==============================
+
+1. 실시간 websocket 개발(ws.resolvers.js 참조)
+
+   - subscription 타입의 typedef 필요
+   - 또한 resolver 에서 subscription subscription명 <strong>subscribe</strong> 필요
+   - pubSub asyncIterator([감시명]) 형태로 오픈,
+   - pubSub publish([감시명],{subscription명: {subscription 결과 object}}) 로 감시할 resolver 에서 호출
+   - withFilter 를 사용하면, 실시간 websocket 에서 filter 를 사용할 수 있다.
+   - subscribe 는 반드시 "AsyncIterator" 타입을 반환해야 한다.
+   - withFilter 사용시, 두번째 인자의 결과값(BOOLEAN) 에 따라서 감시 여부를 결정.
+   - 감시를 시작할 시기에, 자체호출 function 으로 또한번 검사를 사용할 수 있다. <strong>(async(...) ~ {}(...) 부분)</strong>
+
 =============================   2022-06-16  ==============================
 
 1. realtime subscription

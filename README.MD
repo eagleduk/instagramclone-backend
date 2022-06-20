@@ -41,4 +41,4 @@ instagram clone with nomadcoder
 - [X] See Chat
 - [X] Computed Fields (get chat users, get chat messages, get new message count)
 - [X] See (Read) Message
-- [ ] Realtime Messages
+- [X] Realtime Messages
