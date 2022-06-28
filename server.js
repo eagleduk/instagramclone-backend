@@ -38,6 +38,7 @@ async function startServer() {
   const serverCleanup = useServer(
     {
       schema,
+      csrfPrevention: false,
       context: (ctx, msg, args) => {
         // console.log("ctx", ctx);
         // console.log("msg", msg);
@@ -49,9 +50,8 @@ async function startServer() {
   );
 
   const server = new ApolloServer({
-    typeDefs,
-    resolvers,
-    csrfPrevention: true,
+    schema,
+    csrfPrevention: false,
     cache: "bounded",
     context: async ({ req }) => {
       return {
