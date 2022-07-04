@@ -5,5 +5,7 @@ export default gql`
     getUserProfile(username: String!): User
 
     searchUser(keyword: String!): [User]
+
+    getTokenUser: User
   }
 `;

@@ -1,4 +1,5 @@
 import client from "../../client";
+import { protectedResolver } from "../users.utils";
 
 export default {
   Query: {
@@ -12,5 +13,9 @@ export default {
       }),
 
     searchUser: (_, { keyword }) => {},
+
+    getTokenUser: protectedResolver(async (_, __, { loggedInUser }) => {
+      return await client.user.findUnique({ where: { id: loggedInUser.id } });
+    }),
   },
 };
