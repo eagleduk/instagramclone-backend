@@ -9,7 +9,7 @@ export default {
           where: { id },
           select: { userId: true },
         });
-        console.log(comment);
+
         if (!comment) {
           return {
             result: false,

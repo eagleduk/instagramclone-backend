@@ -18,7 +18,7 @@ export default {
 
     viewFeeds: protectedResolver(async (_, __, { loggedInUser }) => {
       // 내가 올린 사진 과 '사진을 올린 사람의 팔로우(내가 팔로잉 중인 사람)' 가 나인 사진 검색
-      console.log(loggedInUser);
+
       const photos = await client.photo.findMany({
         where: {
           OR: [
@@ -27,7 +27,6 @@ export default {
           ],
         },
       });
-      console.log(photos);
       return photos;
     }),
   },

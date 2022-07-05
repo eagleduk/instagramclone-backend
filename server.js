@@ -40,9 +40,6 @@ async function startServer() {
       schema,
       csrfPrevention: false,
       context: (ctx, msg, args) => {
-        // console.log("ctx", ctx);
-        // console.log("msg", msg);
-        // console.log("args", args);
         return getDynamicContext(ctx, msg, args);
       },
     },
