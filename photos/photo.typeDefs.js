@@ -11,6 +11,7 @@ export default gql`
     hashtag: [Hashtag]
     user: User!
     like: Int!
+    isLike: Boolean!
     isOwner: Boolean!
     comments: Int!
   }

@@ -11,6 +11,8 @@ export default {
       return result;
     },
     like: ({ id }) => client.like.count({ where: { photoId: id } }),
+    isLike: ({ id }, _, { loggedInUser }) =>
+      client.like.count({ where: { photoId: id, userId: loggedInUser.id } }),
     isOwner: ({ id, userId }, _, { loggedInUser }) =>
       userId === loggedInUser.id,
     comments: ({ id }) => client.comment.count({ where: { photoId: id } }),
