@@ -13,7 +13,7 @@ export default gql`
     like: Int!
     isLike: Boolean!
     isOwner: Boolean!
-    comments: Int!
+    comments: [Comment]
   }
   type Hashtag {
     id: Int!

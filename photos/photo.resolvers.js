@@ -15,7 +15,11 @@ export default {
       client.like.count({ where: { photoId: id, userId: loggedInUser.id } }),
     isOwner: ({ id, userId }, _, { loggedInUser }) =>
       userId === loggedInUser.id,
-    comments: ({ id }) => client.comment.count({ where: { photoId: id } }),
+    comments: ({ id }) =>
+      client.comment.findMany({
+        where: { photoId: id },
+        include: { user: true },
+      }),
   },
   Hashtag: {
     totalCount: ({ hashtag }) => {

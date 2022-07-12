@@ -6,5 +6,6 @@ export default gql`
     userId: Int!
     text: String!
     photoId: Int!
+    user: User
   }
 `;
