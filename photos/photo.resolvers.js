@@ -19,6 +19,9 @@ export default {
       client.comment.findMany({
         where: { photoId: id },
         include: { user: true },
+        orderBy: {
+          createdAt: "desc",
+        },
       }),
   },
   Hashtag: {

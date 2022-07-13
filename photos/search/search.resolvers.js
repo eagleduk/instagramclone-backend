@@ -26,6 +26,9 @@ export default {
             { user: { follower: { some: { id: loggedInUser.id } } } },
           ],
         },
+        orderBy: {
+          createdAt: "desc",
+        },
       });
       return photos;
     }),

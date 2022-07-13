@@ -12,12 +12,13 @@ export default {
             message: "Photo is not found.",
           };
         }
-        await client.comment.create({
+        const comment = await client.comment.create({
           data: { userId: loggedInUser.id, photoId, text },
         });
 
         return {
           result: true,
+          message: comment.id,
         };
       }
     ),
