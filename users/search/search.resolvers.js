@@ -9,6 +9,7 @@ export default {
         include: {
           follower: true,
           following: true,
+          photo: true,
         },
       }),
 

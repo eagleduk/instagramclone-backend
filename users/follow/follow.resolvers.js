@@ -28,11 +28,35 @@ export default {
         };
       }
     ),
-    unFollowingUser: protectedResolver(async () => {}),
+    unFollowingUser: protectedResolver(
+      async (_, { username }, { loggedInUser }) => {
+        const target = await client.user.findUnique({ where: { username } });
+        if (!target) {
+          return {
+            result: false,
+            message: "following user is not exist.",
+          };
+        }
+        await client.user.update({
+          where: { id: loggedInUser.id },
+          data: {
+            following: {
+              disconnect: {
+                username,
+              },
+            },
+          },
+        });
 
-    FollowerUser: protectedResolver(async () => {}),
+        return {
+          result: true,
+        };
+      }
+    ),
 
-    unFollowerUser: protectedResolver(async () => {}),
+    FollowUser: protectedResolver(async () => {}),
+
+    unFollowUser: protectedResolver(async () => {}),
   },
 
   Query: {

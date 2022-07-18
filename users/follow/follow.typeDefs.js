@@ -9,10 +9,10 @@ export default gql`
     unFollowingUser(username: String!): commonResult
 
     # 맞팔
-    FollowerUser(username: String!): commonResult
+    FollowUser(username: String!): commonResult
 
     # 팔로워 삭제
-    unFollowerUser(username: String!): commonResult
+    unFollowUser(username: String!): commonResult
   }
 
   type Query {

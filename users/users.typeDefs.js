@@ -18,5 +18,6 @@ export default gql`
     followingCount: Int
     isFollower: Boolean
     isFollowing: Boolean
+    photo: [Photo]
   }
 `;
