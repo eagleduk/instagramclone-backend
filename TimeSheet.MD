@@ -1,3 +1,44 @@
+=============================   2022-08-11  ==============================
+#### Deploy
+1. install babel cli 
+   - npm i @babel/cli --dev-only
+
+1. 파일 이동
+   - 소스 폴더 `src` 로 이동
+   - `package.json` script 수정
+
+2. build script 생성
+   - babel `[build target]` --out-dir `[build output]`
+
+3. start script 생성
+
+   - build 된 소스로 서버 실행
+   - node build/server.js
+   - regenerator-runtime 발생시
+
+      1. https://babeljs.io/docs/en/babel-plugin-transform-regenerator 참조
+      2. @babel/plugin-transform-runtime 설치
+         - npm install --save-dev @babel/plugin-transform-regenerator
+      3. babel.config.json plugin 추가
+         - "plugins": ["@babel/plugin-transform-regenerator"]
+
+4. heroku deploy
+   1. heroku 회원가입
+   2. create new app
+   3. Config Vars 입력
+      - .env 파일의 내용은 git 에 업로드 되지 않음으로, 그에 맞는 key, value 를 동일하게 입력
+
+   4. Database 생성
+
+      - Resources -> Add-ons 에서 heroku 에서 제공하는 Database 를 선택할 수 있다.
+      - Database 를 선택하면 자동으로 Database Url 이 `Config Vars` 에 입력된다.
+
+   5. 변경내용 Commit
+      - Deploy 시 branch 의 내용을 바탕으로 서비스 하기 때문에 미리 수정내역을 push 로 GitHub 에 적용해 두어야 한다.
+
+   6. Deploy
+      1. Deploy -> GitHub 를 선택하여 GitHub 의 repository 에서 자동으로 Deploy 되도록 설정
+
 =============================   2022-07-18  ==============================
 
 1. User 정보에서 Photo(feed) 리스트 추가
