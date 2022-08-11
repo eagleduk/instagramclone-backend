@@ -53,6 +53,7 @@ async function startServer() {
     schema,
     csrfPrevention: false,
     cache: "bounded",
+    introspection: true,
     context: async ({ req }) => {
       return {
         token: req.headers.token,
