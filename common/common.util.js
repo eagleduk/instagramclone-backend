@@ -13,7 +13,7 @@ export const uploadFile = async (file, id, folder) => {
   const newFile = `${folder}/${id}${Date.now()}${filename}`;
   const { Location } = await new AWS.S3()
     .upload({
-      Bucket: "instagram-clone-sjlee.w-nomad",
+      Bucket: process.env.AWS_BUCKET,
       Key: newFile,
       Body: readStream,
       ACL: "public-read",
