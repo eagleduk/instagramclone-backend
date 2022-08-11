@@ -38,6 +38,11 @@
 
    6. Deploy
       1. Deploy -> GitHub 를 선택하여 GitHub 의 repository 에서 자동으로 Deploy 되도록 설정
+      2. schema 생성
+         1. `Procfile` 생성
+            - heroku 가 deploy 될때 실행되는 명령어를 추가 할 수 있다.
+            - overview -> Dyno formation 에 표현?
+         2. release, web 입력
 
 =============================   2022-07-18  ==============================
 
