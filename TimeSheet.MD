@@ -44,6 +44,11 @@
             - overview -> Dyno formation 에 표현?
          2. release, web 입력
 
+      3. Deploy 이후 playground 가 넘어가지 않을 경우
+
+         - `Send a POST request to query this endpoint` 메세지 나올시
+         - `ApolloServerPluginLandingPageGraphQLPlayground` Plugin 에 추가
+
 =============================   2022-07-18  ==============================
 
 1. User 정보에서 Photo(feed) 리스트 추가

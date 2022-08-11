@@ -6,7 +6,10 @@ import { ApolloServer } from "apollo-server-express";
 import { typeDefs, resolvers } from "./schema";
 import { logginUser } from "./users/users.utils";
 import graphqlUploadExpress from "graphql-upload/graphqlUploadExpress.js";
-import { ApolloServerPluginDrainHttpServer } from "apollo-server-core";
+import {
+  ApolloServerPluginDrainHttpServer,
+  ApolloServerPluginLandingPageGraphQLPlayground,
+} from "apollo-server-core";
 import { WebSocketServer } from "ws";
 import { useServer } from "graphql-ws/lib/use/ws";
 import { makeExecutableSchema } from "@graphql-tools/schema";
@@ -70,6 +73,7 @@ async function startServer() {
           };
         },
       },
+      ApolloServerPluginLandingPageGraphQLPlayground(),
     ],
   });
 
