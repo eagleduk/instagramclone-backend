@@ -41,13 +41,19 @@
       2. schema 생성
          1. `Procfile` 생성
             - heroku 가 deploy 될때 실행되는 명령어를 추가 할 수 있다.
-            - overview -> Dyno formation 에 표현?
+            - overview -> Dyno formation 에 표현 -> 안됨...
          2. release, web 입력
 
-      3. Deploy 이후 playground 가 넘어가지 않을 경우
+      3. playground 활성화
 
          - `Send a POST request to query this endpoint` 메세지 나올시
          - `ApolloServerPluginLandingPageGraphQLPlayground` Plugin 에 추가
+         - ApolloServer 객체 생성시 `introspection: true` 추가
+
+      4. playground 비활성화
+
+         - `ApolloServerPluginLandingPageDisabled` Plugin 추가
+         - ApolloServer 객체 생성시 `introspection: true` 삭제
 
 =============================   2022-07-18  ==============================
 

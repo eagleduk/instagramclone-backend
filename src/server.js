@@ -8,6 +8,7 @@ import { logginUser } from "./users/users.utils";
 import graphqlUploadExpress from "graphql-upload/graphqlUploadExpress.js";
 import {
   ApolloServerPluginDrainHttpServer,
+  ApolloServerPluginLandingPageDisabled,
   ApolloServerPluginLandingPageGraphQLPlayground,
 } from "apollo-server-core";
 import { WebSocketServer } from "ws";
@@ -53,7 +54,7 @@ async function startServer() {
     schema,
     csrfPrevention: false,
     cache: "bounded",
-    introspection: true,
+    // introspection: true,
     context: async ({ req }) => {
       return {
         token: req.headers.token,
@@ -74,7 +75,8 @@ async function startServer() {
           };
         },
       },
-      ApolloServerPluginLandingPageGraphQLPlayground(),
+      //ApolloServerPluginLandingPageGraphQLPlayground(),
+      ApolloServerPluginLandingPageDisabled(),
     ],
   });
 
